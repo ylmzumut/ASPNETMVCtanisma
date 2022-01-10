@@ -1,0 +1,43 @@
+﻿@using WebApplicationMVCTanisma.Models
+@model Ogrenci
+
+@{
+    ViewBag.Title = "Guncelle";
+}
+
+<h2>Öğrenciyi Guncelle</h2>
+<br />
+@*<form action="Guncelle" method="post">
+        <label>Ad</label>
+        <input type="text" name="Ad" value="@Model.Ad" class="form-control" /> <br />
+        <label>Soyad</label>
+        <input type="text" name="Soyad" value="@Model.Soyad" class="form-control" /> <br />
+        <label>Doğum Tarihi</label>
+        <input type="date" name="DogumTarihi" value="@Model.DogumTarihi" class="form-control" />
+        <br />
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="submit" class="btn btn-primary" value="Güncelle" />
+    </form>*@
+
+
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <label>Doğum Tarihi:</label>
+    @Html.TextBoxFor(x => x.DogumTarihi, new { @class = "form-control" })
+    <br />
+    @*@Html.ActionLink("Güncelle","Guncelle","Ogrenci",
+        new { }, new {@class="btn btn-primary" })*@
+    <input type="submit" class="btn btn-primary" value="Güncelle" />
+    
+}
+
+
+
+

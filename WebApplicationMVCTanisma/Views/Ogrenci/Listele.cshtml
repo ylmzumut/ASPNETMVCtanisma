@@ -1,0 +1,41 @@
+﻿@using WebApplicationMVCTanisma.Models;
+
+@{
+    ViewBag.Title = "Listele";
+}
+@{
+    int siraNo = 1;
+}
+<h2>Tüm Öğrenciler</h2>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>Sıra No</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Doğum Tarihi</th>
+        <th>İşlem Güncelle</th>
+        <th>İşlem Sil</th>
+    </tr>
+    @foreach (Ogrenci item in Model)
+    {
+        <tr>
+            <td>@(siraNo++)</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.DogumTarihi.ToString("dd.MM.yyyy")</td>
+            <td>
+                <a href="Guncelle/@item.Id" class="btn btn-warning">Güncelle</a>
+            </td>
+            <td>
+                <a href="Sil/@item.Id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+<br />
+
+<a href="/Ogrenci/Ekle" class="btn btn-success">Yeni Öğrenci Ekle</a>

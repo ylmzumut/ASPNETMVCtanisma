@@ -1,0 +1,21 @@
+﻿@using WebApplicationMVCTanisma.Models;
+@{
+    ViewBag.Title = "Ekle";
+}
+
+<h2>Yeni Öğrenci Ekleyelim</h2>
+<form action="Ekle" method="post">
+    <label>Öğrenci Adı:</label>
+    <input type="text" placeholder="Ad Giriniz..." name="Ad" class="form-control" /><br />
+    <label>Öğrenci Soyadı:</label>
+    <input type="text" placeholder="Soyad Giriniz..." name="Soyad" class="form-control" /><br />
+    <label>Doğum Tarihi:</label>
+    <input type="date" name="DogumTarihi" class="form-control"/><br />
+    <input type="submit" value="EKLE" class="btn btn-primary" />
+    <a href="/Ogrenci/Listele" class="btn btn-default">Listeye Geri Dön</a>
+</form>
+
+
+@{ 
+    
+}
