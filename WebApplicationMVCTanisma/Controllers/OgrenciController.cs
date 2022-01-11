@@ -58,5 +58,33 @@ namespace WebApplicationMVCTanisma.Controllers
 
             return RedirectToAction("Listele");
         }
+
+        [HttpGet]
+        public ActionResult Sil(int id)
+        {
+            var silinecekOgr = Ogrenci.OgrenciListesi.FirstOrDefault(x => x.Id == id);
+            return View(silinecekOgr);
+        }
+        [HttpPost]
+        public ActionResult Sil(Ogrenci ogr)
+        {
+            if (ogr.Id>0)
+            {
+                Ogrenci.OgrenciListesi.Remove(ogr);
+            }
+            return RedirectToAction("Listele");
+        }
+        [HttpPost]
+        public ActionResult Sil2(Ogrenci ogr)
+        {
+            if (ogr.Id > 0)
+            {
+                Ogrenci.OgrenciListesi.Remove(ogr);
+                return Json(new { success = true });
+            }
+            return Json(new { success = false,error= "Beklenmedik hata oldu.Silinemedi!" });
+        }
     }
 }
+
+

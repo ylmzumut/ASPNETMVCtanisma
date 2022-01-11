@@ -1,0 +1,37 @@
+﻿@using WebApplicationMVCTanisma.Models
+@model Ogrenci
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h4>Öğrenci Bilgileri</h4>
+<br />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(x => x.Ad)
+    </dt>
+    <dd>
+        @Html.DisplayFor(x => x.Ad)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(x => x.Soyad)
+    </dt>
+    <dd>
+        @Html.DisplayFor(x => x.Soyad)
+    </dd>
+</dl> <br />
+
+@*@Html.HiddenFor(x=>x.Id)*@
+<input type="hidden" name="@Model.Id" />
+
+@using (Html.BeginForm("Sil","Ogrenci",FormMethod.Post)) {
+    <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-danger" />
+    </div>
+}
+
+
+
+
+
+

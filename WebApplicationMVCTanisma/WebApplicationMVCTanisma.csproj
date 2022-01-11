@@ -169,6 +169,7 @@
     <Content Include="Views\Ogrenci\Listele.cshtml" />
     <Content Include="Views\Ogrenci\Ekle.cshtml" />
     <Content Include="Views\Ogrenci\Guncelle.cshtml" />
+    <Content Include="Views\Ogrenci\Sil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

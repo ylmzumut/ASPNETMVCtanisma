@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplicationMVCTanisma.Models
 {
-    public class Ogrenci
+    public class Ogrenci : IEquatable<Ogrenci>
     {
         public int Id { get; set; }
         public string Ad { get; set; }
@@ -28,6 +28,9 @@ namespace WebApplicationMVCTanisma.Models
             return OgrenciListesi;
             ;
         }
-
+        public bool Equals(Ogrenci other)
+        {
+            return Id == other.Id;
+        }
     }
 }

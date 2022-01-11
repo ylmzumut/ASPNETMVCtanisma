@@ -26,10 +26,13 @@
             <td>@item.Soyad</td>
             <td>@item.DogumTarihi.ToString("dd.MM.yyyy")</td>
             <td>
-                <a href="Guncelle/@item.Id" class="btn btn-warning">Güncelle</a>
+                @*<a href="Guncelle/@item.Id" class="btn btn-warning">Güncelle</a>*@
+                @Html.ActionLink("Güncelle", "Guncelle", "Ogrenci", new { id = item.Id }, new { @class = "btn btn-warning" })
             </td>
             <td>
-                <a href="Sil/@item.Id" class="btn btn-danger">Sil</a>
+                @*<a href="Sil/@item.Id" class="btn btn-danger">Sil</a>*@ @*Eşdeğer*@
+                @Html.ActionLink("Sil", "Sil", "Ogrenci", new { id = item.Id }, new { @class = "btn btn-danger" })
+                <input type="button" value="Sil" class="btn btn-default" style="background-color:pink" onclick="ConfirmDelete(@item.Id)"/>
             </td>
         </tr>
 
@@ -39,3 +42,26 @@
 <br />
 
 <a href="/Ogrenci/Ekle" class="btn btn-success">Yeni Öğrenci Ekle</a>
+
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+    function ConfirmDelete(id) {
+        var x = confirm("Silmek istediğinize emin misiniz?");
+        if (x) {
+            $.ajax({
+                type: "Post",
+                url: "/Ogrenci/Sil2/"+id,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (response) {
+                    //alert(response.status);
+                    alert('Silindi');
+                    window.location.href = "/Ogrenci/Listele";
+                },
+                error: function () {
+                    alert('Beklenmedik hata oldu.Silinemedi!');
+                }
+            });
+        }
+    }
+</script>
