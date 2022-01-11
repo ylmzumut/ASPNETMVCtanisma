@@ -11,30 +11,30 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="text-align:center">
             @Html.DisplayNameFor(model => model.Ad)
         </th>
-        <th>
+        <th style="text-align:center">
             @Html.DisplayNameFor(model => model.Soyad)
         </th>
-        <th>
+        <th style="text-align:center">
             @Html.DisplayNameFor(model => model.DogumTarihi)
         </th>
-        <th></th>
+        <th style="text-align:center">İşlemler</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(modelItem => item.Ad)
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(modelItem => item.Soyad)
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.DisplayFor(modelItem => item.DogumTarihi)
         </td>
-        <td>
+        <td style="text-align:center">
             @Html.ActionLink("Güncelle", "Edit", new {  id=item.Id },new { @class="btn btn-warning"}) 
             @Html.ActionLink("Detaylar", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) 
             @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })

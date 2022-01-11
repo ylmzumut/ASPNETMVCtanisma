@@ -40,9 +40,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="SİL" class="btn btn-danger" /> |
-            @Html.ActionLink("Geri Dön", "Index")
-        </div>
+<div class="form-actions no-color">
+    <input type="submit" value="SİL" class="btn btn-danger" />
+    @Html.ActionLink("Listeye Geri Dön", "Index", null, new { @class = "btn btn-default", @style = "background-color:gray;color:white" })
+</div>
     }
 </div>

@@ -25,9 +25,10 @@
 <input type="hidden" name="@Model.Id" />
 
 @using (Html.BeginForm("Sil","Ogrenci",FormMethod.Post)) {
-    <div class="form-actions no-color">
-        <input type="submit" value="Sil" class="btn btn-danger" />
-    </div>
+<div class="form-actions no-color">
+    <input type="submit" value="Sil" class="btn btn-danger" />
+    <a href="/Ogrenci/Listele" class="btn btn-default" style="background-color:dimgray;color:white">Listeye Geri Dön</a>
+</div>
 }
 
 

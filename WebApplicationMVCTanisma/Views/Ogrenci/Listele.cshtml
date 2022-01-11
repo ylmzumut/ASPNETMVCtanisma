@@ -11,20 +11,20 @@
 
 <table class="table table-hover">
     <tr>
-        <th>Sıra No</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>Doğum Tarihi</th>
-        <th>İşlem Güncelle</th>
-        <th>İşlem Sil</th>
+        <th style="text-align:center">Sıra No</th>
+        <th style="text-align:center">Ad</th>
+        <th style="text-align:center">Soyad</th>
+        <th style="text-align:center">Doğum Tarihi</th>
+        <th style="text-align:center">Güncelleme İşlemi</th>
+        <th style="text-align:center">Silme İşlemi</th>
     </tr>
     @foreach (Ogrenci item in Model)
     {
-        <tr>
+        <tr style="text-align:center">
             <td>@(siraNo++)</td>
             <td>@item.Ad</td>
             <td>@item.Soyad</td>
-            <td>@item.DogumTarihi.ToString("dd.MM.yyyy")</td>
+            <td>@item.DogumTarihi</td>
             <td>
                 @*<a href="Guncelle/@item.Id" class="btn btn-warning">Güncelle</a>*@
                 @Html.ActionLink("Güncelle", "Guncelle", "Ogrenci", new { id = item.Id }, new { @class = "btn btn-warning" })
