@@ -28,7 +28,6 @@ namespace WebApplicationMVCTanisma.Controllers
             return View("Error");
         }
 
-        [ValidateAntiForgeryToken]
 
         // GET: Student/Create
         public ActionResult Create()
