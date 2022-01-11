@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationEmpty", "WebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationMVCTanisma", "WebApplicationMVCTanisma\WebApplicationMVCTanisma.csproj", "{0540792D-0D06-4C00-8D10-A543285D50FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{1987BBD5-70BB-430E-BACE-A84C929DE667}"
+	ProjectSection(SolutionItems) = preProject
+		media\ValidationSummary-false.png = media\ValidationSummary-false.png
+		media\ValidationSummary-true.png = media\ValidationSummary-true.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
