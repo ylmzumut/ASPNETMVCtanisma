@@ -1,6 +1,10 @@
 # ASPNETMVCtanisma
 ### ASP.NET MVC Giriş - Notlar
 
+#### Ogrenci
+
+#### Student
+
 ##### Edit - Create
 ```cshtml
 @* Views/Student/Edit.cshtml - Views/Student/Create.cshtml *@
