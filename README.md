@@ -6,18 +6,19 @@
 @* Views/Student/Edit.cshtml - Views/Student/Create.cshtml *@
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <h4>Ogrenci</h4>
-        <hr />
-        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
-            </div>
-        </div>
+   @Html.AntiForgeryToken()
+   <div class="form-horizontal">
+       <h4>Ogrenci</h4>
+       <hr />
+       @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+       <div class="form-group">
+           @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label col-md-2" })
+           <div class="col-md-10">
+               @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control" }})
+               @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+           </div>
+       </div>
+   </div>
 }
 ```
 ```cshtml
@@ -39,7 +40,8 @@
 ```csharp
 // Mesajı aldığımız yer ise Model/Ogrenci.cs
 [Required(ErrorMessage ="Öğrenci adı boş geçilemez!")]
-[StringLength(maximumLength:25,MinimumLength =2,ErrorMessage ="Adınız 2 ile 25 karakter aralığında olmalıdır!")]
+[StringLength(maximumLength:25,MinimumLength =2,
+              ErrorMessage ="Adınız 2 ile 25 karakter aralığında olmalıdır!")]
 public string Ad { get; set; }
 ```
 ![ValidationSummary-true](https://github.com/ylmzumut/ASPNETMVCtanisma/blob/master/media/ValidationSummary-true.png)
